@@ -1,4 +1,9 @@
-<?php include_once "topmenu.php";?>
+<?php 
+  // TODO
+  // Implementar el codi de Registre, afegint l’usuari al fitxer users.txt
+
+  include_once "topmenu.php";
+?>
 <div class="container-fluid">
 
   <h2>Registration form</h2>
