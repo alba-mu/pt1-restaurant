@@ -1,6 +1,8 @@
 <?php 
   // TODO
   // Implementar el codi de Registre, afegint l’usuari al fitxer users.txt
+  // Validar camps
+  // Validar contrasenya
 
   include_once "topmenu.php";
 ?>
