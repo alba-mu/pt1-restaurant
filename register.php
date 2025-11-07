@@ -3,6 +3,7 @@ require_once './fn-php/fn-users.php';
 
 $msg_error = "";
 $msg_success = "";
+$inserted = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registersubmit")) {
   //TODO: improve validations
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
       $inserted = insertUser($username, $password, "registered", $name, $surname);
       if ($inserted) {
           $msg_success = "Usuari registrat correctament! Pots iniciar sessió."; // Registre exitós
+          $username = $password = $name = $surname = ''; // Netejar variables per no mostrar-les al formulari
       } else {
           $msg_error = "Ja existeix un usuari amb aquest nom d'usuari."; // Error en el registre
       }
@@ -45,20 +47,28 @@ include_once "topmenu.php";
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
+            value="<?php  if(!$inserted) echo htmlspecialchars($username ?? ''); ?>">
     </div>
+
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
+            value="<?php  if(!$inserted) echo htmlspecialchars($password ?? ''); ?>">
     </div>
+
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
+            value="<?php  if(!$inserted) echo htmlspecialchars($name ?? ''); ?>">
     </div>
+
     <div class="form-group">
       <label for="surname">Surname:</label>
-      <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname">
+      <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname"
+            value="<?php  if(!$inserted) echo htmlspecialchars($surname ?? ''); ?>">
     </div>
+
     <button type="submit" name="registersubmit" class="btn btn-dark text-white">Submit</button>
   </form>
   <?php include_once "footer.php";?>
