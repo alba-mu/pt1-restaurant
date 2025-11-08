@@ -1,5 +1,6 @@
 <?php
 session_start();
+$current_page = 'index.php';
 include_once "topmenu.php";
 ?>
 

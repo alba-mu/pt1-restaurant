@@ -1,5 +1,6 @@
 <?php
 session_start();
+$current_page = 'adminmenus.php';
 require_once './fn-php/fn-roles.php';
 include_once "topmenu.php";
 ?>

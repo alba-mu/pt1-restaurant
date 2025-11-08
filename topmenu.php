@@ -40,20 +40,40 @@
             <!-- Contingut del navbar -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <!-- Enllaços de l'esquerra -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
                     <!-- Enllaços visibles per a tots -->
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $current_page === 'index.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
+                            href="index.php">
+                            Home</a>
+                    </li>
 
                     <!-- Només admin -->
                     <?php if ($isAdmin): ?>
-                        <li class="nav-item"><a class="nav-link" href="adminmenus.php">Admin Menus</a></li>
-                        <li class="nav-item"><a class="nav-link" href="adminusers.php">Admin Users</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $current_page === 'adminmenus.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
+                                href="adminmenus.php">
+                                Admin Menus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $current_page === 'adminusers.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
+                                href="adminusers.php">
+                                Admin Users</a>
+                        </li>
                     <?php endif; ?>
 
                     <!-- Només si SÍ està loggejat -->
                     <?php if ($isLogged): ?>
-                        <li class="nav-item"><a class="nav-link" href="daymenu.php">Day Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="viewmenus.php">View Menus</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $current_page === 'daymenu.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
+                                href="daymenu.php">
+                                Day Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $current_page === 'viewmenus.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
+                                href="viewmenus.php">
+                                View Menus</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
                 

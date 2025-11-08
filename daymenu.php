@@ -1,5 +1,6 @@
 <?php
 session_start();
+$current_page = 'daymenu.php';
 include_once "topmenu.php";
 ?>
 
