@@ -2,9 +2,9 @@
 require_once './fn-php/fn-users.php';
 $msg_error = "";
 if (filter_has_var(INPUT_POST, "loginsubmit")) {
-    // TODO: improve validations
-    $username = filter_input(INPUT_POST, "username");
-    $password = filter_input(INPUT_POST, "password");
+
+    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
     //search user
     $userinfo = searchUser($username);
