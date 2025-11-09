@@ -23,7 +23,7 @@ include_once "topmenu.php";
         Vine a gaudir d'un ambient acollidor, una atenció personalitzada i una cuina mediterrània que no et deixarà indiferent.
         <em>T'esperem amb il·lusió!</em>
       </p>
-      <a href="<?= $isLogged ? 'daymenu.php' : 'login.php' ?>" class="btn btn-secondary btn-md mt-3">Consulta el menú del dia</a>
+      <a href="<?= $isLogged ? 'daymenu.php' : 'login.php' ?>" class="btn btn-secondary btn-md mt-2">Consulta el menú del dia</a>
     </div>
 
   </div>
