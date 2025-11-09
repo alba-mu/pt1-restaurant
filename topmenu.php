@@ -28,8 +28,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 ps-5 pe-5">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="https://www.proven.cat">
-                <img src="images/ip_logo.png" alt="Logo" class="logo-navbar me-2">
+            <a class="navbar-brand d-flex align-items-center me-5" href="https://www.proven.cat">
+                <img src="images/ip_logo_sense_lletres.png" alt="Logo" class="logo-navbar me-2">
+                <h6 class="display-6">ProvenSoft</h6>
             </a>
 
             <!-- Botó toggle (responsive) -->
@@ -40,7 +41,7 @@
             <!-- Contingut del navbar -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <!-- Enllaços de l'esquerra -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
+                <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 gap-5">
                     <!-- Enllaços visibles per a tots -->
                     <li class="nav-item">
                         <a class="nav-link <?= $current_page === 'index.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
