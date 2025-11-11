@@ -1,1 +1,31 @@
 id;category;name;price
+1;appetiser;Amanida verda;4.50
+2;appetiser;Gaspatxo andalús;5.00
+3;appetiser;Croquetes de pernil ibèric;5.50
+4;appetiser;Braves ProvenSoft;4.75
+5;appetiser;Tàrtar de salmó amb alvocat;6.50
+
+6;firstcourse;Risotto de bolets;8.50
+7;firstcourse;Sopa de peix;7.80
+8;firstcourse;Canelons de rostit;8.00
+9;firstcourse;Lasanya de verdures;7.50
+10;firstcourse;Amanida de formatge de cabra i fruits secs;8.20
+
+11;maincourse;Entrecot de vedella a la brasa;14.50
+12;maincourse;Bacallà al pil-pil;13.80
+13;maincourse;Pollastre al curri amb arròs basmati;11.90
+14;maincourse;Lluç amb salsa de gambes;13.50
+15;maincourse;Hamburguesa gourmet amb patates;12.00
+
+16;dessert;Coulant de xocolata;5.00
+17;dessert;Tiramisú casolà;4.80
+18;dessert;Crema catalana;4.50
+19;dessert;Pastís de formatge amb fruits vermells;4.90
+20;dessert;Gelat artesanal de vainilla;3.50
+
+21;drink;Aigua mineral;1.50
+22;drink;Refresc (cola, llimona o taronja);2.20
+23;drink;Cervesa;2.50
+24;drink;Vi blanc de la casa (copa);3.50
+25;drink;Vi negre de la casa (copa);3.50
+26;drink;Cafè o tallat;1.80
