@@ -44,7 +44,7 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
         if (!isset($menu_by_category[$cat])) continue;
         $title = ucfirst($cat);
         $rows = implode('', $menu_by_category[$cat]);
-        $tables[$cat] = "<h3>$title</h3>
+        $tables[$cat] = "<h5 class='display-5'>$title</h5>
                         <table class='table table-striped'>
                             <thead><tr><th>Nom</th><th>Preu</th></tr></thead>
                             <tbody>$rows</tbody>
