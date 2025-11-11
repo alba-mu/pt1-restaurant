@@ -28,7 +28,7 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
             $id = $parts[0];
             $category = $parts[1];
             $name = $parts[2];
-            $price = $parts[3];
+            $price = $parts[3] . ' €';
 
             // Guardar cada fila dins de la seva categoria
             $menu_by_category[$category][] = "<tr><td>$name</td><td>$price</td></tr>";
