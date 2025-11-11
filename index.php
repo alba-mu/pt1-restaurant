@@ -7,8 +7,8 @@ $current_page = 'index.php';
 <?php include_once "topmenu.php"; ?>
 
 <!-- Contingut de la pàgina -->
-<main class="flex-grow-1 container-fluid py-5 text-dark">
-  <div class="row align-items-center justify-content-center px-5">
+<main class="flex-grow-1 container-fluid py-5 text-dark d-flex align-items-center justify-content-center">
+  <div class="row align-items-center justify-content-center px-5 w-100">
 
     <!-- Columna esquerra: imatge -->
     <div class="col-lg-6 col-md-10 mb-4 mb-lg-0">
