@@ -17,15 +17,17 @@ $tables = generateMenuTables($menu_filepath, $categories_filepath);
 <main class="flex-grow-1 container py-4">
     <div class="container-fluid">
         <div class="container">
-            <?php
-            if (isset($tables['error'])) {
-                echo "<div class='alert alert-danger'>{$tables['error']}</div>";
-            } else {
-                foreach ($tables as $table) {
-                    echo $table;
+            <div class="row">
+                <?php
+                if (isset($tables['error'])) {
+                    echo "<div class='alert alert-danger'>{$tables['error']}</div>";
+                } else {
+                    foreach ($tables as $table) {
+                        echo "<div class='col-lg-4 col-md-6 mb-4'>$table</div>";
+                    }
                 }
-            }
-            ?>
+                ?>
+            </div>
         </div>
     </div>
 </main>
