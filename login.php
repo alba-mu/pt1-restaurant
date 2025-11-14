@@ -7,6 +7,7 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
   $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
   $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+  $remember = filter_input(INPUT_POST, 'remember');
 
   // search user
   $userinfo = searchUser($username);
@@ -23,6 +24,17 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
       $_SESSION['name'] = $userinfo[3];
       $_SESSION['surname'] = $userinfo[4];
 
+      
+      if ($remember) {
+          // 'Remember me' checked -> Save user info in cookies
+          setcookie('username', $username, time() + 3*24*60*60, "/"); // 3 days
+          setcookie('password', $password, time() + 3*24*60*60, "/");
+      } else {
+          // 'Remember me' NOT checked -> delete cookie if it exists
+          setcookie('username', '', time() - 3600, "/");
+          setcookie('password', '', time() - 3600, "/");
+      }
+
       header("Location: index.php");
     } else {  // incorrect password
       $msg_error = "Incorrect password";
@@ -31,8 +43,9 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
     $msg_error = "User not found";
   }
 } else {
-  $username = "";
-  $password = "";
+  // If cookies exists, fill form with last logged in user's info
+    $username = $_COOKIE['username'] ?? '';
+    $password = $_COOKIE['password'] ?? '';
 }
 
 ?>
@@ -60,7 +73,8 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
           <div class="mb-3">
             <label for="password" class="form-label fw-bold">Password:</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
+              value="<?php echo $password ?? ""; ?>">
           </div>
 
           <div class="form-check mb-3">
