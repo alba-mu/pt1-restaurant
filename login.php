@@ -10,8 +10,10 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
   // search user
   $userinfo = searchUser($username);
-
-  if (count($userinfo) != 0) {  // user found
+  
+  if ($username === '' || $password === '') {
+    $msg_error = "Username and password are required.";
+  } else if (count($userinfo) != 0) {  // user found
     // Check password
     if ($userinfo[1] === $password) {
       // start session
