@@ -74,8 +74,8 @@
 
                 <?php if (!$isLogged): ?>
                     <div class="d-flex align-items-center text-white">
-                        <a class="btn btn-outline-light btn-sm me-2" href="register.php">Register</a>
-                        <a class="btn btn-outline-light btn-sm me-2" href="login.php">Login</a>
+                        <a class="btn btn-outline-light btn-md me-2" href="register.php">Register</a>
+                        <a class="btn btn-outline-light btn-md me-2" href="login.php">Login</a>
                     </div>
                 <?php endif; ?>
                 
@@ -86,7 +86,7 @@
                             echo htmlspecialchars($_SESSION['name'] . " " . $_SESSION['surname']);
                             ?>
                         </span>
-                        <a href="logout.php" class="btn btn-outline-light btn-sm">Logout</a>
+                        <a href="logout.php" class="btn btn-outline-light btn-md">Logout</a>
                     </div>
                 <?php endif; ?>
             </div>
