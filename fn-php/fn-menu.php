@@ -13,7 +13,7 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
         return ['error' => "No s'ha trobat un dels fitxers (categories.txt o menu.txt)."];
     }
 
-    // Lllegir categories per garantir l'ordre
+    // Llegir categories per garantir l'ordre
     $categories = file($categories_filepath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
     // Llegir menú línia per línia
@@ -46,10 +46,83 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
         $rows = implode('', $menu_by_category[$cat]);
         $tables[$cat] = "<h5 class='display-5'>$title</h5>
                         <table class='table table-striped'>
-                            <thead><tr><th>Nom</th><th>Preu</th></tr></thead>
                             <tbody>$rows</tbody>
                         </table>";
     }
 
     return $tables;
+}
+
+/**
+ * Llegeix els fitxers de categories i menú del dia i retorna un array amb llites HTML agrupades per categoria,
+ * incloent una targeta final amb el preu del menú.
+ * @param string $dayMenu_filepath
+ * @param string $categories_filepath
+ * @param float $menu_price Preu del menú per persona
+ * @return array Associatiu: 'categoria' => 'llista HTML'
+ */
+function generateDayMenuLists(string $dayMenu_filepath, string $categories_filepath, float $menu_price = 23.90): array {
+    $menu_by_category = [];
+
+    // Comprovar que els fitxers existeixin
+    if (!file_exists($dayMenu_filepath) || !file_exists($categories_filepath)) {
+        return ['error' => "No s'ha trobat un dels fitxers (categories.txt o daymenu.txt)."];
+    }
+
+    // Llegir categories per garantir l'ordre
+    $categories = file($categories_filepath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+    // Llegir menú del dia línia per línia
+    if ($handle_menu = fopen($dayMenu_filepath, 'r')) {
+        while (($line = fgets($handle_menu)) !== false) {
+            $line = trim($line);
+            // Ignorar línies buides i capçalera
+            if ($line === '' || $line === 'id;category;name') continue;
+
+            // Separar els elements de cada línia
+            $parts = explode(';', $line);
+            $id = $parts[0];
+            $category = $parts[1];
+            $name = $parts[2];
+
+            // Guardar cada fila dins de la seva categoria
+            $menu_by_category[$category][] = "<li class='list-group-item mb-1 fs-5'>$name</li>";
+        }
+        fclose($handle_menu);
+    } else {
+        return ['error' => 'Error en obrir el fitxer del menú.'];
+    }
+
+    // Gerenar les taules HTML per cada categoria en l'ordre de categories.txt
+    $lists = [];
+    foreach ($categories as $cat) {
+        if (!isset($menu_by_category[$cat])) continue;
+        $title = ucfirst($cat);
+        $rows = implode('', $menu_by_category[$cat]);
+        $lists[$cat] = "
+                        <div class='card shadow-sm h-100'>
+                            <div class='card-header display-6'>
+                                $title
+                            </div>
+                            <div class='card-body'>
+                                <ul class='list-group list-group-flush mb-0'>
+                                    $rows
+                                </ul>
+                            </div>
+                        </div>
+                    ";
+    }
+
+    // Afegir targeta final amb el preu del menú
+    $lists[] = "
+        <div class='col-12'>
+            <div class='card shadow-sm'>
+                <div class='card-body text-center bg-dark-subtle fs-1 fw-semibold'>
+                    " . number_format($menu_price, 2, ',', '.') . " €
+                </div>
+            </div>
+        </div>
+    ";
+
+    return $lists;
 }
