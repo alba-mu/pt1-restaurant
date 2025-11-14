@@ -1,4 +1,15 @@
 <?php
+/**
+ * File: register.php
+ * Author: Alba Muñoz
+ * Date: 07/11/2025
+ *
+ * Description:
+ * This file handles the user registration process.
+ * It validates the input fields, checks password requirements,
+ * inserts the user into the database if valid, and displays
+ * appropriate success or error messages.
+ */
 require_once './fn-php/fn-users.php';
 
 $msg_error = "";

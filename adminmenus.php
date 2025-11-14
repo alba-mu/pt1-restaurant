@@ -1,4 +1,12 @@
 <?php
+/**
+ * File: adminmenus.php
+ *
+ * Description:
+ * This page is intended for admin users to manage the restaurant's menus. 
+ * Access is restricted based on user roles. 
+ * Currently, the functionality is not implemented. 
+ */
 session_start();
 $current_page = 'adminmenus.php';
 require_once './fn-php/fn-roles.php';

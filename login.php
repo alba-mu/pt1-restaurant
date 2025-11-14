@@ -1,4 +1,16 @@
 <?php
+/**
+ * File: login.php
+ * Author: Alba Muñoz
+ * Date: 07/11/2025
+ *
+ * Description:
+ * This file handles user login. It validates username and password,
+ * starts a session upon successful authentication, and optionally
+ * sets cookies for "Remember me" functionality for 3 days.
+ * If login fails, it displays appropriate error messages.
+ */
+
 require_once './fn-php/fn-users.php';
 
 $msg_error = "";

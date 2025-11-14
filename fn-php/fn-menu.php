@@ -1,5 +1,18 @@
 <?php
 /**
+ * File: fn-menu.php
+ * Author: Alba Muñoz
+ * Date: 14/11/2025
+ *
+ * Description:
+ * This file contains functions to read menu and daily menu files and generate
+ * HTML representations for the website. It provides:
+ *  - generateMenuTables(): returns HTML tables grouped by category for the full menu.
+ *  - generateDayMenuLists(): returns HTML lists grouped by category for the daily menu,
+ *    including a final card showing the menu price.
+ */
+
+/**
  * Reads the category and menu files and returns an array with HTML tables grouped by category
  * @param string $menu_filepath
  * @param string $categories_filepath

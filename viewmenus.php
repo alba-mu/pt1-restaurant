@@ -1,4 +1,14 @@
 <?php
+/**
+ * File: viewmenus.php
+ * Author: Alba Muñoz
+ * Date: 14/11/2025
+ *
+ * Description:
+ * This file is responsible for displaying the restaurant's full menu.
+ * It reads the menu and categories from text files and generates
+ * HTML tables for each category to present the dishes and prices.
+ */
 session_start();
 $current_page = 'viewmenus.php';
 

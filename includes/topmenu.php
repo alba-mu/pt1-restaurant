@@ -1,4 +1,17 @@
 <?php 
+/**
+ * File: topmenu.php
+ * Author: Alba Muñoz
+ * Date: 07/11/2025
+ *
+ * Description:
+ * This file generates the top navigation bar for the application.
+ * It adapts its links and options based on the user's login status and role.
+ * Admin users see additional menu options, while logged-out users see 
+ * Register and Login buttons. It uses Bootstrap 5 for styling and layout.
+ */
+?>
+
     $isLogged = False;
     $isAdmin = False;
 

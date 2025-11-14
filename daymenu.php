@@ -1,4 +1,16 @@
 <?php
+/**
+ * File: daymenu.php
+ * Author: Alba Muñoz
+ * Date: 14/11/2025
+ *
+ * Description:
+ * This page displays the daily menu of ProvenSoft Restaurant. 
+ * It reads the daily menu items from 'daymenu.txt' and organizes 
+ * them by category. Each category list is displayed in a centered, 
+ * responsive layout using Bootstrap. If there is an error reading 
+ * the menu, an alert message is shown.
+ */
 session_start();
 $current_page = 'daymenu.php';
 

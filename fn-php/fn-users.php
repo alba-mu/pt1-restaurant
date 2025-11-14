@@ -1,7 +1,14 @@
 <?php
 /** 
-Functions to manage persistence of users
+
+ * File: fn-users.php
+ *
+ * Description:
+ * This file contains functions to manage user persistence in the system.
+ * It provides functions to search for a user by username and to insert a new user,
+ * ensuring that usernames are unique.
  */
+
 /**
  * searches username in file
  * @param string $username the username to search

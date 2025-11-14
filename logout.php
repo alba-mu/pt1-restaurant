@@ -1,4 +1,14 @@
 <?php
+/**
+ * File: logout.php
+ * Author: Alba Muñoz
+ * Date: 07/11/2025
+ *
+ * Description:
+ * This file handles user logout.
+ * If a session exists, it destroys it and displays a confirmation message
+ * If no session exists, it redirects the user to the login page.
+ */
 session_start();
 if (isset($_SESSION['role'])) {  // session exists
     session_destroy();
