@@ -10,7 +10,6 @@
  * Admin users see additional menu options, while logged-out users see 
  * Register and Login buttons. It uses Bootstrap 5 for styling and layout.
  */
-?>
 
     $isLogged = False;
     $isAdmin = False;
