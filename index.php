@@ -3,7 +3,7 @@ session_start();
 $current_page = 'index.php';
 ?>
 
-<?php include_once "topmenu.php"; ?>
+<?php include_once "includes/topmenu.php"; ?>
 
 <main class="flex-grow-1 container-fluid py-5 text-dark d-flex align-items-center justify-content-center">
   <div class="row align-items-center justify-content-center px-5 w-100">
@@ -35,7 +35,7 @@ $current_page = 'index.php';
   </div>
 </main>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 
 </body>
 </html>

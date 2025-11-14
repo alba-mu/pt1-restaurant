@@ -50,7 +50,7 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
 ?>
 
-<?php include_once "topmenu.php"; ?>
+<?php include_once "includes/topmenu.php"; ?>
 
 <main class="flex-grow-1 d-flex justify-content-center align-items-center">
   <div class="container" style="max-width: 400px;">
@@ -94,7 +94,7 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
   </div>
 </main>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 </body>
 
 </html>

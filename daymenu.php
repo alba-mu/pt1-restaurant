@@ -11,7 +11,7 @@ include_once 'fn-php/fn-menu.php';
 $lists = generateDayMenuLists($dayMenu_filepath, $categories_filepath);
 ?>
 
-<?php include_once "topmenu.php"; ?>
+<?php include_once "includes/topmenu.php"; ?>
 
 <main class="flex-grow-1 container-fluid py-4">
     <div class="container-fluid">
@@ -38,7 +38,7 @@ $lists = generateDayMenuLists($dayMenu_filepath, $categories_filepath);
     </div>
 </main>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 
 </body>
 

@@ -4,7 +4,7 @@ $current_page = 'adminusers.php';
 require_once './fn-php/fn-roles.php';
 ?>
 
-<?php include_once "topmenu.php"; ?>
+<?php include_once "includes/topmenu.php"; ?>
 
 <main class="flex-grow-1 container py-4">
     <div class="container-fluid">
@@ -26,7 +26,7 @@ require_once './fn-php/fn-roles.php';
     </div>
 </main>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 
 </body>
 

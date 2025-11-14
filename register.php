@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 
 ?>
 
-<?php include_once "topmenu.php"; ?>
+<?php include_once "includes/topmenu.php"; ?>
 
 <main class="flex-grow-1 d-flex justify-content-center align-items-center">
   <div class="container" style="max-width: 500px;">
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
   </div>
 </main>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "includes/footer.php"; ?>
 
 </body>
 
