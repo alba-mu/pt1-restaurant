@@ -86,7 +86,7 @@ function generateDayMenuLists(string $dayMenu_filepath, string $categories_filep
             $name = $parts[2];
 
             // Guardar cada fila dins de la seva categoria
-            $menu_by_category[$category][] = "<li class='list-group-item mb-1'>$name</li>";
+            $menu_by_category[$category][] = "<li class='list-group-item mb-1 mt-1 p-0'>$name</li>";
         }
         fclose($handle_menu);
     } else {
@@ -101,10 +101,10 @@ function generateDayMenuLists(string $dayMenu_filepath, string $categories_filep
         $rows = implode('', $menu_by_category[$cat]);
         $lists[$cat] = "
                         <div class='card shadow-sm'>
-                            <div class='card-header bg-dark-subtle'>
+                            <div class='card-header bg-dark-subtle pb-0'>
                                 <h5 class='fs-2 fw-light'>$title</h5>
                             </div>
-                            <div class='card-body'>
+                            <div class='card-body p-1 ps-5 pe-5'>
                                 <ul class='list-group list-group-flush mb-0'>
                                     $rows
                                 </ul>
@@ -116,8 +116,8 @@ function generateDayMenuLists(string $dayMenu_filepath, string $categories_filep
     // Afegir targeta final amb el preu del menú
     $lists[] = "
         <div class='col-12'>
-            <div class='card shadow-sm'>
-                <div class='card-body text-center bg-dark-subtle fs-1 fw-semibold'>
+            <div class='card border border-0'>
+                <div class='card-body text-center bg-dark text-white fs-1 fw-semibold rounded-4 p-1'>
                     " . number_format($menu_price, 2, ',', '.') . " €
                 </div>
             </div>
