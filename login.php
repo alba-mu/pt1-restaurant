@@ -70,6 +70,8 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
           <button type="submit" name="loginsubmit" class="btn btn-dark w-100">Submit</button>
 
+          <p class="text-center mt-3 mb-0">Don't have an account? <a href="register.php">Register</a> </p>
+
         </form>
 
       </div>
