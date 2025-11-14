@@ -10,6 +10,7 @@
  * them by category. Each category list is displayed in a centered, 
  * responsive layout using Bootstrap. If there is an error reading 
  * the menu, an alert message is shown.
+ * Access is restricted to logged-in users (registered or admin).
  */
 session_start();
 $current_page = 'daymenu.php';
@@ -18,6 +19,13 @@ $dayMenu_filepath = 'files/daymenu.txt';
 $categories_filepath = 'files/categories.txt';
 
 include_once 'fn-php/fn-menu.php';
+include_once 'fn-php/fn-roles.php';
+
+// Redirect if user is not allowed
+if (!isGranted($_SESSION['role'] ?? '', 'daymenu')) {
+    header('Location: login.php');
+    exit;
+}
 
 // Generate lists by category
 $lists = generateDayMenuLists($dayMenu_filepath, $categories_filepath);
