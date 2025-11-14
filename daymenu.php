@@ -15,8 +15,8 @@ $lists = generateDayMenuLists($dayMenu_filepath, $categories_filepath);
 
 <main class="flex-grow-1 container-fluid py-4">
     <div class="container-fluid">
-        <div class="container border border-2 border-muted rounded-3">
-            <h1 class="text-center display-3 mt-0 bg-dark-subtle pb-2 mb-3">Menú del Dia</h1>
+        <div class="container" style='max-width: 650px;'>
+            <h1 class="text-center display-3 mt-0 bg-dark fw-semibold text-white pb-2 mb-3 rounded-2">Menú del Dia</h1>
             <div class="row g-3">
 
                 <?php
