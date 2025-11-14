@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
     // Try to insert the user
     $inserted = insertUser($username, $password, "registered", $name, $surname);
     if ($inserted) {
-      $msg_success = "<p class='mb-2'>User successfully registered! You can now log in.</p> <a href='login.php' class='btn btn-dark text-white'>Login</a><span>"; 
+      $msg_success = "<p class='mb-2'>User successfully registered! You can log in now.</p> <a href='login.php' class='btn btn-dark text-white'>Login</a><span>"; 
       $username = $password = $name = $surname = ''; // Clear variables so they are not shown in the form
     } else {
       $msg_error = "A user with this username already exists."; // Registration error
