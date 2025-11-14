@@ -12,7 +12,7 @@ $current_page = 'index.php';
       <img src="images/restaurant.jpg" alt="ProvenSoft Restaurant" class="img-fluid rounded-4 shadow-lg w-100">
     </div>
 
-    <div class="col-lg-5 col-md-10">
+    <div class="col-lg-5 col-md-10 text-center">
       <h1 class="fw-bold mb-4">Welcome to ProvenSoft Restaurant</h1>
       <p class="lead mb-3">
         At <strong>ProvenSoft Restaurant</strong> we combine tradition and innovation to offer you a unique gastronomic experience.
@@ -22,12 +22,14 @@ $current_page = 'index.php';
         Come and enjoy a cozy atmosphere, personalized attention, and Mediterranean cuisine that will not leave you indifferent.
         <em>We look forward to seeing you!</em>
       </p>
-      <a href="<?= $isLogged ? 'daymenu.php' : 'login.php' ?>" class="btn btn-dark text-white btn-md mt-2">
-        Check today's menu
-      </a>
-      <a href="<?= $isLogged ? 'viewmenus.php' : 'login.php' ?>" class="btn btn-dark text-white btn-md mt-2">
-        View the full menu
-      </a>
+      <div class="d-flex justify-content-center gap-5">
+        <a href="<?= $isLogged ? 'daymenu.php' : 'login.php' ?>" class="btn btn-dark btn-md">
+          Check today's menu
+        </a>
+        <a href="<?= $isLogged ? 'viewmenus.php' : 'login.php' ?>" class="btn btn-dark btn-md">
+          View the full menu
+        </a>
+      </div>
     </div>
 
   </div>
