@@ -17,7 +17,7 @@ $tables = generateMenuTables($menu_filepath, $categories_filepath);
 <main class="flex-grow-1 container-fluid py-4">
     <div class="container-fluid">
         <div class="container border border-2 border-muted rounden-3">
-            <h1 class="text-center display-3 mt-0 bg-dark text-white fw-semibold pb-2 mb-3">La nostra carta</h1>
+            <h1 class="text-center display-4 mt-0 bg-dark text-white fw-semibold pb-2 mb-3">La nostra carta</h1>
             <div class="row">
                 <?php
                 if (isset($tables['error'])) {

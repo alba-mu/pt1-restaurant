@@ -44,8 +44,8 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
         if (!isset($menu_by_category[$cat])) continue;
         $title = ucfirst($cat);
         $rows = implode('', $menu_by_category[$cat]);
-        $tables[$cat] = "<h5 class='display-6'>$title</h5>
-                        <table class='table table-striped'>
+        $tables[$cat] = "<h5 class='fs-2 fw-light bg-dark-subtle'>$title</h5>
+                        <table class='table'>
                             <tbody>$rows</tbody>
                         </table>";
     }
@@ -86,7 +86,7 @@ function generateDayMenuLists(string $dayMenu_filepath, string $categories_filep
             $name = $parts[2];
 
             // Guardar cada fila dins de la seva categoria
-            $menu_by_category[$category][] = "<li class='list-group-item mb-1 fs-5'>$name</li>";
+            $menu_by_category[$category][] = "<li class='list-group-item mb-1'>$name</li>";
         }
         fclose($handle_menu);
     } else {
@@ -100,9 +100,9 @@ function generateDayMenuLists(string $dayMenu_filepath, string $categories_filep
         $title = ucfirst($cat);
         $rows = implode('', $menu_by_category[$cat]);
         $lists[$cat] = "
-                        <div class='card shadow-sm h-100'>
-                            <div class='card-header display-6'>
-                                $title
+                        <div class='card shadow-sm'>
+                            <div class='card-header bg-dark-subtle'>
+                                <h5 class='fs-2 fw-light'>$title</h5>
                             </div>
                             <div class='card-body'>
                                 <ul class='list-group list-group-flush mb-0'>
