@@ -79,6 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 
           <button type="submit" name="registersubmit" class="btn btn-dark w-100">Submit</button>
 
+          <p class="text-center mt-3 mb-0">Already have an account? <a href="login.php">Login</a> </p>
+
         </form>
 
       </div>
