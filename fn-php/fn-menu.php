@@ -44,7 +44,7 @@ function generateMenuTables(string $menu_filepath, string $categories_filepath):
         if (!isset($menu_by_category[$cat])) continue;
         $title = ucfirst($cat);
         $rows = implode('', $menu_by_category[$cat]);
-        $tables[$cat] = "<h5 class='fs-2 fw-light bg-dark-subtle'>$title</h5>
+        $tables[$cat] = "<h5 class='fs-2 fw-light bg-dark-subtle p-1 ps-2 rounded-2'>$title</h5>
                         <table class='table'>
                             <tbody>$rows</tbody>
                         </table>";
