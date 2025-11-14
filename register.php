@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
     // Try to insert the user
     $inserted = insertUser($username, $password, "registered", $name, $surname);
     if ($inserted) {
-      $msg_success = "User successfully registered! You can now log in. <a href='login.php' class='btn btn-dark text-white'>Login</a>"; 
+      $msg_success = "<p class='mb-2'>User successfully registered! You can now log in.</p> <a href='login.php' class='btn btn-dark text-white'>Login</a><span>"; 
       $username = $password = $name = $surname = ''; // Clear variables so they are not shown in the form
     } else {
       $msg_error = "A user with this username already exists."; // Registration error
@@ -38,45 +38,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 
 <?php include_once "topmenu.php"; ?>
 
-<main class="flex-grow-1 container py-4">
-  <div class="container-fluid">
-    <div class="container">
-      <h2 class="mb-3">Registration Form</h2>
+<main class="flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="container" style="max-width: 500px;">
 
-      <?php if ($msg_error): ?>
-        <div class="alert alert-danger"><?php echo $msg_error; ?></div>
-      <?php elseif ($msg_success): ?>
-        <div class="alert alert-success"><?php echo $msg_success; ?></div>
-      <?php endif; ?>
+    <h2 class="text-center display-4 mb-4 fw-normal">Registration Form</h2>
 
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <div class="form-group mb-3">
-          <label for="username">Username:</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" value="<?php if (!$inserted)
-            echo $username ?? ''; ?>">
-        </div>
+    <div class="card shadow">
+      <div class="card-body">
+        <?php if ($msg_error): ?>
+          <div class="alert alert-danger pt-1 pb-1"><?php echo $msg_error; ?></div>
+        <?php elseif ($msg_success): ?>
+          <div class="alert alert-success pt-1 pb-1 text-center"><?php echo $msg_success; ?></div>
+        <?php endif; ?>
 
-        <div class="form-group mb-3">
-          <label for="password">Password:</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" value="<?php if (!$inserted)
-            echo $password ?? ''; ?>">
-        </div>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
-        <div class="form-group mb-3">
-          <label for="name">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="<?php if (!$inserted)
-            echo $name ?? ''; ?>">
-        </div>
+          <div class="mb-3">
+            <label for="username" class="form-label fw-bold">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" 
+              value="<?php if (!$inserted) echo $username ?? ''; ?>">
+          </div>
 
-        <div class="form-group mb-3">
-          <label for="surname">Surname:</label>
-          <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname" value="<?php if (!$inserted)
-            echo $surname ?? ''; ?>">
-        </div>
+          <div class="mb-3">
+            <label for="password" class="form-label fw-bold">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" 
+              value="<?php if (!$inserted) echo $password ?? ''; ?>">
+          </div>
 
-        <button type="submit" name="registersubmit" class="btn btn-dark text-white">Submit</button>
-      </form>
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" 
+              value="<?php if (!$inserted) echo $name ?? ''; ?>">
+          </div>
+
+          <div class="mb-3">
+            <label for="surname" class="form-label fw-bold">Surname:</label>
+            <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname" 
+              value="<?php if (!$inserted) echo $surname ?? ''; ?>">
+          </div>
+
+          <button type="submit" name="registersubmit" class="btn btn-dark w-100">Submit</button>
+
+        </form>
+
+      </div>
     </div>
+    
   </div>
 </main>
 

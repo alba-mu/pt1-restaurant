@@ -39,36 +39,42 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
 <?php include_once "topmenu.php"; ?>
 
-<main class="flex-grow-1 container py-4">
-  <div class="container-fluid">
-    <div class="container">
+<main class="flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="container" style="max-width: 400px;">
 
-      <?php if ($msg_error): ?>
-        <div class="alert alert-danger"><?php echo $msg_error; ?></div>
-      <?php endif; ?>
+    <h2 class="text-center display-4 mb-4 fw-normal">Login Form</h2>
 
-      <h2 class="mb-3">Login Form</h2>
+    <div class="card shadow">
+      <div class="card-body">
+        <?php if ($msg_error): ?>
+          <div class="alert alert-danger pt-1 pb-1"><?php echo $msg_error; ?></div>
+        <?php endif; ?>
 
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
-        <div class="form-group mb-3">
-          <label for="username">Email:</label>
-          <input type="username" class="form-control" id="username" placeholder="Enter username" name="username"
-            value="<?php echo $username ?? ""; ?>">
-        </div>
+          <div class="mb-3">
+            <label for="username" class="form-label fw-bold">Email:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
+              value="<?php echo $username ?? ""; ?>">
+          </div>
 
-        <div class="form-group mb-3">
-          <label for="password">Password:</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-        </div>
+          <div class="mb-3">
+            <label for="password" class="form-label fw-bold">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+          </div>
 
-        <div class="checkbox mb-3">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-        
-        <button type="submit" name="loginsubmit" class="btn btn-dark text-white">Submit</button>
-      </form>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="remember" name="remember">
+            <label class="form-check-label" for="remember">Remember me</label>
+          </div>
+
+          <button type="submit" name="loginsubmit" class="btn btn-dark w-100">Submit</button>
+
+        </form>
+
+      </div>
     </div>
+    
   </div>
 </main>
 
