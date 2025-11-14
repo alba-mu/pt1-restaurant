@@ -25,6 +25,9 @@ $current_page = 'index.php';
       <a href="<?= $isLogged ? 'daymenu.php' : 'login.php' ?>" class="btn btn-dark text-white btn-md mt-2">
         Consulta el menú del dia
       </a>
+      <a href="<?= $isLogged ? 'viewmenus.php' : 'login.php' ?>" class="btn btn-dark text-white btn-md mt-2">
+        Consulta la carta
+      </a>
     </div>
 
   </div>
