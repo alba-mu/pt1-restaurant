@@ -8,25 +8,25 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
   $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
   $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-  //search user
+  // search user
   $userinfo = searchUser($username);
 
-  if (count($userinfo) != 0) {  //user found
-    //Comprovar contrasenya
+  if (count($userinfo) != 0) {  // user found
+    // Check password
     if ($userinfo[1] === $password) {
-      //iniciar sessió
+      // start session
       session_start();
-      //guardar data a la sessió
+      // save data in session
       $_SESSION['role'] = $userinfo[2];
       $_SESSION['name'] = $userinfo[3];
       $_SESSION['surname'] = $userinfo[4];
 
       header("Location: index.php");
-    } else {  //contrasenya incorrecte
-      $msg_error = "Contrasenya incorrecte";
+    } else {  // incorrect password
+      $msg_error = "Incorrect password";
     }
-  } else {  //user not found
-    $msg_error = "Usuari no trobat";
+  } else {  // user not found
+    $msg_error = "User not found";
   }
 } else {
   $username = "";
@@ -45,7 +45,7 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
         <div class="alert alert-danger"><?php echo $msg_error; ?></div>
       <?php endif; ?>
 
-      <h2 class="mb-3">Login form</h2>
+      <h2 class="mb-3">Login Form</h2>
 
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 

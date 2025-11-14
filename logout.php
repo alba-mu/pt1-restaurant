@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['role'])) {  //session exists
+if (isset($_SESSION['role'])) {  // session exists
     session_destroy();
     $loggedOut = True;
 } else {
@@ -9,12 +9,12 @@ if (isset($_SESSION['role'])) {  //session exists
 ?>
 <?php if ($loggedOut): ?>
     <!DOCTYPE html>
-    <html lang="ca">
+    <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tancament de sessió</title>
+        <title>Logout</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,9 +34,9 @@ if (isset($_SESSION['role'])) {  //session exists
         <main class="flex-grow-1 d-flex justify-content-center align-items-center">
             <div class="card text-center p-4 shadow-lg" style="max-width: 400px;">
                 <div class="card-body">
-                    <h2 class="card-title mb-3">Has tancat sessió correctament</h2>
-                    <p class="card-text fs-4 mb-4">Fins aviat!</p>
-                    <a href="index.php" class="btn btn-dark text-white w-100">Tornar a la pàgina principal</a>
+                    <h2 class="card-title mb-3">You have logged out successfully</h2>
+                    <p class="card-text fs-4 mb-4">See you soon!</p>
+                    <a href="index.php" class="btn btn-dark text-white w-100">Return to homepage</a>
                 </div>
             </div>
         </main>

@@ -7,7 +7,7 @@ $categories_filepath = 'files/categories.txt';
 
 include_once 'fn-php/fn-menu.php';
 
-// Generar taules per categoria
+// Generate tables by category
 $tables = generateMenuTables($menu_filepath, $categories_filepath);
 
 ?>
@@ -17,7 +17,7 @@ $tables = generateMenuTables($menu_filepath, $categories_filepath);
 <main class="flex-grow-1 container-fluid py-4">
     <div class="container-fluid">
         <div class="container">
-            <h1 class="text-center display-4 mt-0 bg-dark text-white fw-semibold pb-2 mb-3 rounded-2">La nostra carta</h1>
+            <h1 class="text-center display-4 mt-0 bg-dark text-white fw-semibold pb-2 mb-3 rounded-2">Our Menu</h1>
             <div class="row">
                 <?php
                 if (isset($tables['error'])) {

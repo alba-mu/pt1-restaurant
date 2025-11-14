@@ -12,24 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
   $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
   $surname = trim(filter_input(INPUT_POST, "surname", FILTER_SANITIZE_SPECIAL_CHARS));
 
-  // Validacions bàsiques
+  // Basic validations
   if ($username === '' || $password === '' || $name === '' || $surname === '') {
-    $msg_error = "Tots els camps són obligatoris.";
+    $msg_error = "All fields are required.";
 
-    // Validació contrasenya (mínim 4 caràcters i 1 número)
+    // Password validation (minimum 4 characters and 1 number)
   } elseif (strlen($password) < 4) {
-    $msg_error = "La contrasenya ha de tenir almenys 4 caràcters.";
+    $msg_error = "The password must have at least 4 characters.";
   } elseif (!preg_match("#[0-9]+#", $password)) {
-    $msg_error = "La contrasenya ha de tenir almenys 1 número.";
+    $msg_error = "The password must contain at least 1 number.";
 
   } else {
-    // Intentar inserir l'usuari
+    // Try to insert the user
     $inserted = insertUser($username, $password, "registered", $name, $surname);
     if ($inserted) {
-      $msg_success = "Usuari registrat correctament! Pots iniciar sessió. <a href='login.php' class='btn btn-dark text-white'>Login</a>"; // Registre exitós
-      $username = $password = $name = $surname = ''; // Netejar variables per no mostrar-les al formulari
+      $msg_success = "User successfully registered! You can now log in. <a href='login.php' class='btn btn-dark text-white'>Login</a>"; 
+      $username = $password = $name = $surname = ''; // Clear variables so they are not shown in the form
     } else {
-      $msg_error = "Ja existeix un usuari amb aquest nom d'usuari."; // Error en el registre
+      $msg_error = "A user with this username already exists."; // Registration error
     }
   }
 }
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 <main class="flex-grow-1 container py-4">
   <div class="container-fluid">
     <div class="container">
-      <h2 class="mb-3">Registration form</h2>
+      <h2 class="mb-3">Registration Form</h2>
 
       <?php if ($msg_error): ?>
         <div class="alert alert-danger"><?php echo $msg_error; ?></div>

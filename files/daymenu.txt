@@ -1,20 +1,20 @@
 id;category;name
-1;appetiser;Croquetes de pernil ibèric
-2;appetiser;Gaspatxo andalús
-3;appetiser;Braves ProvenSoft
+1;appetiser;Iberian ham croquettes
+2;appetiser;Andalusian gazpacho
+3;appetiser;ProvenSoft-style patatas bravas
 
-4;firstcourse;Risotto de bolets
-5;firstcourse;Canelons de rostit
-6;firstcourse;Lasanya de verdures
+4;firstcourse;Mushroom risotto
+5;firstcourse;Roast cannelloni
+6;firstcourse;Vegetable lasagna
 
-7;maincourse;Entrecot de vedella a la brasa
-8;maincourse;Pollastre al curri amb arròs basmati
-9;maincourse;Bacallà al pil-pil
+7;maincourse;Grilled beef entrecôte
+8;maincourse;Curry chicken with basmati rice
+9;maincourse;Cod pil-pil
 
-10;dessert;Coulant de xocolata
-11;dessert;Crema catalana
-12;dessert;Pastís de formatge amb fruits vermells
+10;dessert;Chocolate lava cake
+11;dessert;Catalan cream
+12;dessert;Cheesecake with red berries
 
-13;drink;Aigua mineral
-14;drink;Vi negre de la casa (copa)
-15;drink;Cafè o tallat
+13;drink;Mineral water
+14;drink;House red wine (glass)
+15;drink;Coffee or espresso
