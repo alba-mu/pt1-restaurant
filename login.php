@@ -69,7 +69,7 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 
     <h2 class="text-center display-4 mb-4 fw-normal">Login Form</h2>
 
-    <div class="card shadow">
+    <div class="card shadow mb-4">
       <div class="card-body">
         <?php if ($msg_error): ?>
           <div class="alert alert-danger pt-1 pb-1"><?php echo $msg_error; ?></div>
