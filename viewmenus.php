@@ -41,7 +41,7 @@ $tables = generateMenuTables($menu_filepath, $categories_filepath);
                     echo "<div class='alert alert-danger'>{$tables['error']}</div>";
                 } else {
                     foreach ($tables as $table) {
-                        echo "<div class='col-lg-4 col-md-6 mb-3'>$table</div>";
+                        echo "<div class='col-xl-4 col-md-6 mb-3'>$table</div>";
                     }
                 }
                 ?>
