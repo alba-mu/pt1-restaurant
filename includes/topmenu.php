@@ -36,7 +36,7 @@
     </head>
 
     <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 ps-5 pe-5">
+    <nav class="navbar navbar-expand-xxl navbar-dark bg-dark mb-4 ps-5 pe-5">
         <div class="container-fluid">
 
             <a class="navbar-brand d-flex align-items-center me-5" href="https://www.proven.cat">
@@ -49,7 +49,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 gap-5">
+                <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 gap-3 gap-xxl-4">
 
                     <li class="nav-item">
                         <a class="nav-link <?= $current_page === 'index.php' ? 'active bg-secondary text-white rounded px-2' : '' ?>" 
@@ -85,21 +85,27 @@
                 </ul>
 
                 <?php if (!$isLogged): ?>
-                    <div class="d-flex align-items-center text-white">
-                        <a class="btn btn-outline-light btn-md me-2" href="register.php">Register</a>
-                        <a class="btn btn-outline-light btn-md me-2" href="login.php">Login</a>
-                    </div>
+                    <ul class="navbar-nav mb-2 mb-xxl-0">
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-light btn-md" href="register.php">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light btn-md" href="login.php">Login</a>
+                        </li>
+                    </ul>
                 <?php endif; ?>
                 
                 <?php if ($isLogged): ?>
-                    <div class="d-flex align-items-center text-white">
-                        <span class="me-3">
-                            <?php 
-                            echo htmlspecialchars($_SESSION['name'] . " " . $_SESSION['surname']);
-                            ?>
-                        </span>
-                        <a href="logout.php" class="btn btn-outline-light btn-md">Logout</a>
-                    </div>
+                    <ul class="navbar-nav mb-2 mb-xxl-0 ms-xxl-3 align-items-end">
+                        <li class="nav-item d-flex align-items-center">
+                            <span class="nav-link px-2">
+                                <?= htmlspecialchars($_SESSION['name'] . " " . $_SESSION['surname']); ?>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="logout.php" class="btn btn-outline-light btn-md ms-2">Logout</a>
+                        </li>
+                    </ul>
                 <?php endif; ?>
             </div>
         </div>
