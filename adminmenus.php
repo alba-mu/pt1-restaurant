@@ -10,6 +10,12 @@
 session_start();
 $current_page = 'adminmenus.php';
 require_once './fn-php/fn-roles.php';
+
+// Redirect if user is not allowed
+if (!isGranted($_SESSION['role'] ?? '', 'adminmenus')) {
+    header('Location: login.php');
+    exit;
+}
 ?>
 
 <?php include_once "includes/topmenu.php"; ?>
@@ -18,7 +24,6 @@ require_once './fn-php/fn-roles.php';
     <div class="container-fluid">
         <div class="container">
             <h2>Admin menus</h2>
-            <?php if (isGranted($_SESSION['role'] ?? '', 'adminmenus')): ?>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -26,9 +31,6 @@ require_once './fn-php/fn-roles.php';
                     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum
                 </p>
-            <?php else: ?>
-                <p>You are not allowed to acces this page!</p>
-            <?php endif; ?>
         </div>
     </div>
 </main>
